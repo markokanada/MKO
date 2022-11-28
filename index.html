@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookstore</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.google.com/books/jsapi.js"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="scss/main.css" />
+    <script src="JS/main.js"></script>
+    <style id="indicatorStyle">/*
+        .navigation ul li:nth-child(1).active ~ .indicator {
+            transform: translateX(50px);
+        }
+        
+        .navigation ul li:nth-child(2).active ~ .indicator {
+            transform: translateX(200px);
+        }
+        
+        .navigation ul li:nth-child(3).active ~ .indicator {
+            transform: translateX(791px);
+        }*/</style>
+
+  </head>
+
+  <body onload="startUp()">
+    <div id="navbar" class="nav-bg">
+      <div id="navbar-field" class="navigation-field">
+        <div class="navigation">
+          <ul>
+            <li class="list active">
+              <a class="lista">
+                <span class="icon"
+                  ><ion-icon name="home-outline"></ion-icon
+                ></span>
+                <span class="text">Főoldal</span>
+              </a>
+            </li>
+            <li class="list">
+              <a class="lista">
+                <span class="icon"
+                  ><ion-icon name="book-outline"></ion-icon
+                ></span>
+                <span class="text">Könyvek</span>
+              </a>
+            </li>
+            <li class="list">
+              <a class="lista">
+                <span class="icon"
+                  ><ion-icon name="chatbox-ellipses-outline"></ion-icon
+                ></span>
+                <span class="text">Kapcsolat</span>
+              </a>
+            </li>
+            <div class="indicator"></div>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider kezdete-->
+    <div class="banner" id="Home">
+        <div class="bg-overlay">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="banner-text">
+                  <h2>
+                    Üdvözlünk a <span>M</span>odern <span>K</span>önyvrendszerező <span>O</span>ldalon!
+                    
+                  </h2>
+                  <p>
+                    A weboldal a Neumann János Informatikai Technikum
+                    megbízásából készült.
+                  </p>
+                  <i
+                    class="fas fa-angle-double-down text-center fa-3x arrow"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slider vége-->
+
+      <div onclick="outClicking()" class="content-screen d-none"></div>
+      <div class="content-card auto-align-dom d-none">
+        <div class="row">
+          <div id="content" class="col-12 col-xxl-6"></div>
+          <div
+            id="content-image"
+            class="col-12 col-xxl-6 d-md-block d-none"
+          ></div>
+        </div>
+      </div>
+
+    <div id="modal"></div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var globalResizeTimer = null;
+      $(window).resize(function () {
+        autoAlign();
+        ContentScreenToggler(false);
+        ContentScreenCardSizing();
+        ContentScreenPositioning();
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
